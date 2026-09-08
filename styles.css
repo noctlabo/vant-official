@@ -672,14 +672,13 @@ body:not(.ja-on) .lockdlg [data-ja]:is(:hover,:focus-visible)::after{color:#f4f4
 .lockdlg .pill:hover{background:#090a0c;color:#f4f4f2}
 /* コメントのいいね */
 button.cmt__like{display:inline-flex;align-items:center;gap:.45rem;min-height:44px;padding:.4rem .95rem;border:1px solid rgba(0,0,0,.2);background:none;color:rgba(0,0,0,.6);font:inherit;font-size:.76rem;cursor:pointer;transition:none}
-button.cmt__like:hover{color:var(--red)}
+
 button.cmt__like[aria-pressed=true]{border-color:rgba(0,0,0,.2)}
 button.cmt__like i{display:inline-flex;color:rgba(0,0,0,.4);transition:none}
-button.cmt__like:hover i{color:var(--red)}
+
 button.cmt__like[aria-pressed=true] i{color:var(--red)}
 button.cmt__like[aria-pressed=true] i svg{fill:var(--red)}
 button.cmt__like[aria-pressed=true] i{color:var(--red)}
-button.cmt__like:hover{color:var(--red)}
 button.cmt__like[aria-pressed=true]{color:var(--red)}
 
 /* ja OFF のフローティングヒント: ホバー時も地色に対して読める色に */
@@ -731,3 +730,22 @@ dialog{max-height:92svh;overflow:hidden}
 
 img{-webkit-touch-callout:none;-webkit-user-drag:none;user-select:none}
 @media(max-width:600px){.dialog-gallery>img{cursor:zoom-in}.dialog-gallery{display:grid;place-items:center}}
+
+/* リンクになっている .row は指先カーソルとホバー表現を持たせる */
+/* リンク行: 指先カーソル（.list .row の cursor:default より優先） */
+.list a.row,.updates__grid a.row,.topics>a.row,a.row{cursor:pointer!important;text-decoration:none;color:inherit}
+/* ホバーの塗りに内側の余白をつける */
+.list a,.list .row,.updates__grid a,.updates__grid .row{padding-inline:1.1rem;border-radius:2px}
+.list a:hover,.list .row:hover,.updates__grid a:hover,.updates__grid .row:hover{background:rgba(255,255,255,.06)}
+body.ally-page :is(.list,.updates__grid) :is(a,.row):hover{background:rgba(0,0,0,.04)}
+@media(max-width:600px){.list a,.list .row,.updates__grid a,.updates__grid .row{padding-inline:.7rem}}
+
+/* スレッド OP のフッター: いいねと HOT タグの高さ・位置を揃える */
+.thread__op>footer{display:flex;align-items:center;gap:.75rem}
+.thread__op .thread__cat{display:inline-flex;align-items:center;min-height:44px;padding:0 .95rem;font-size:.62rem;letter-spacing:.16em;background:#0a0b0d;color:#f4f4f2}
+
+/* いいね: マウス環境のみホバーで赤（スマホはホバー無効） */
+@media(hover:hover) and (pointer:fine){
+  button.cmt__like:hover{color:var(--red)}
+  button.cmt__like:hover i{color:var(--red)}
+}
