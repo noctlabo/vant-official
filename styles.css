@@ -568,3 +568,131 @@ button.pill{font-family:inherit;cursor:pointer}
 .picker .chips .chip{max-width:100%;white-space:normal;text-align:center;line-height:1.5}
 .footer .sns a{color:inherit;text-decoration:none;cursor:pointer}
 .footer .sns a:hover,.footer .sns a:focus-visible{text-decoration:underline;text-underline-offset:.3em;text-decoration-thickness:1px}
+
+/* ---- スマホ: 余白を詰めてスクロール量を削減 ---- */
+@media(max-width:600px){
+  .section{padding-block:3.1rem}
+  .ally-tabs.section{padding-block:1.2rem}
+  .section-head>span{margin-bottom:1.1rem}
+  .about__grid{margin-top:2.2rem;gap:2rem}
+  .about__visual{aspect-ratio:auto}
+  .stats{margin-top:2.4rem}
+  .stats div{padding:1.1rem}
+  .member-list{margin-top:2rem}
+  .member{min-height:540px}
+  .filters,.feed-grid,.live-grid,.updates__grid,.shop__card,.list,.chips,.products,.media-grid,.archive,.thread{margin-top:2rem}
+  .live-card{min-height:430px}
+  .next{height:58svh;min-height:380px}
+  .sub-head{margin:2.6rem 0 1.1rem}
+  .cta-row{margin-top:2.2rem}
+  .post-detail,.live-hero,.facts{margin-top:2.2rem}
+  .facts div{padding:1.2rem}
+  .page{padding-bottom:3.5rem}
+  .footer{min-height:0;padding-block:3.5rem 2rem}
+  .footer__main{font-size:2.6rem}
+  .ally-concept{margin-bottom:2.2rem}
+  .pager{margin-top:2rem}
+}
+
+/* ---- POST（メンバーブログ / ΛLLY 明地） ---- */
+.bgroup{margin-top:3.2rem}
+.bgroup__head{display:flex;align-items:baseline;justify-content:space-between;gap:1.5rem;border-top:1px solid rgba(0,0,0,.18);padding-top:1.1rem}
+.bgroup__head h2{margin:0;font-family:var(--serif);font-size:1.35rem;font-weight:400;letter-spacing:.04em}
+.bgroup__head .arrow-link{flex:none;white-space:nowrap;font-size:.64rem;letter-spacing:.16em}
+.bgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.4rem;margin-top:1.5rem}
+.bcard{display:block}
+.bcard__ph{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;background:#dcdcda}
+.bcard__ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s,filter .4s;filter:grayscale(.15)}
+.bcard:hover .bcard__ph img{transform:scale(1.03);filter:none}
+.bcard__lock{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:.5rem;font-style:normal;background:rgba(6,7,9,.3);color:#f4f4f2;font-size:.62rem;letter-spacing:.14em;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.bcard b{margin:.85rem 0 .45rem;font-size:.82rem;font-weight:400;line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.bcard small{font-size:.64rem;letter-spacing:.08em;color:rgba(0,0,0,.55)}
+.bcard:hover b{text-decoration:underline;text-underline-offset:.25em}
+.bpost__hero{margin:3rem 0 0;border:1px solid rgba(0,0,0,.2);background:#050505;overflow:hidden;max-width:640px}
+.bpost__hero img{display:block;width:100%;height:auto;object-fit:cover}
+.bpost__text{margin-top:2.4rem;max-width:40rem}
+.bpost__text p{margin:0 0 1.3rem;font-size:.95rem;line-height:1.95}
+.gate{margin-top:2.4rem;max-width:40rem;border:1px dashed rgba(0,0,0,.35);background:#f9f9f7;padding:2.2rem;display:grid;justify-items:start;gap:.9rem}
+.gate b{font-size:.66rem;letter-spacing:.18em}
+.gate p{margin:0;font-size:.88rem;color:rgba(0,0,0,.68)}
+body.ally-page .gate .pill{border-color:#090a0c;color:#090a0c}
+body.ally-page .gate .pill:hover{background:#090a0c;color:#fff}
+@media(max-width:900px){.bgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.bgroup{margin-top:2.2rem}.bgrid{gap:1rem;margin-top:1.2rem}.bpost__hero{margin-top:2rem}.bpost__text,.gate{margin-top:1.8rem}.gate{padding:1.5rem}}
+
+/* ---- POST 記事: 本文＋コメント ---- */
+.bwrap{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:2.4rem;align-items:start;margin-top:2.6rem}
+.bwrap__main .bpost__hero{margin-top:0;max-width:none}
+.bwrap__main .bpost__text{margin-top:1.8rem;max-width:none}
+.cmt{border:1px solid rgba(0,0,0,.18);background:#f9f9f7;padding:1.4rem}
+.cmt__head{display:flex;align-items:baseline;gap:.7rem;border-bottom:1px solid rgba(0,0,0,.18);padding-bottom:.8rem}
+.cmt__head b{font-size:.78rem;letter-spacing:.1em}
+.cmt__head span{font-size:.7rem;color:rgba(0,0,0,.58)}
+.cmt__input{display:flex;gap:.6rem;margin-top:1rem}
+.cmt__input input{flex:1;min-width:0;padding:.7rem .8rem;border:1px solid rgba(0,0,0,.24);background:#fff;color:#090a0c;font:inherit;font-size:.82rem}
+.cmt__input button{min-width:44px;min-height:44px;border:1px solid rgba(0,0,0,.24);background:#fff;color:#090a0c;font:inherit;cursor:not-allowed}
+.cmt__list{list-style:none;margin:1.2rem 0 0;padding:0}
+.cmt__list li{padding:1rem 0;border-bottom:1px solid rgba(0,0,0,.14)}
+.cmt__list header{display:flex;align-items:baseline;gap:.7rem}
+.cmt__list b{font-size:.72rem;letter-spacing:.08em}
+.cmt__list time{font-size:.64rem;color:rgba(0,0,0,.55)}
+.cmt__list p{margin:.5rem 0 0;font-size:.85rem;line-height:1.8}
+.cmt__list footer{margin-top:.55rem}
+.cmt__like{font-size:.68rem;color:rgba(0,0,0,.55)}
+.cmt__note{margin:1.1rem 0 0;font-size:.66rem;color:rgba(0,0,0,.55)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(max-width:900px){.bwrap{grid-template-columns:1fr;gap:1.8rem}}
+@media(max-width:600px){.bwrap{margin-top:2rem}.cmt{padding:1.1rem}}
+
+/* 限定投稿: 画像は伏せる */
+.bpost__hero--locked{position:relative;margin-top:1.6rem;pointer-events:none}
+.bpost__hero--locked img{filter:blur(4px) brightness(.94);transform:scale(1.03);cursor:default!important}
+.bpost__lockmark{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:.6rem;font-style:normal;background:rgba(6,7,9,.28);color:#f4f4f2;font-size:.66rem;letter-spacing:.16em;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.bcard__lock+*{}
+.bcard__ph .bcard__lock~img{}
+.bcard:has(.bcard__lock) .bcard__ph img{filter:blur(3px) brightness(.94);transform:scale(1.03)}
+.bcard:has(.bcard__lock):hover .bcard__ph img{filter:blur(2px) brightness(1);transform:scale(1.05)}
+
+/* 限定投稿のポップアップ */
+.lockdlg{width:min(420px,calc(100vw - 40px));padding:0;border:1px solid rgba(0,0,0,.28);background:#f4f4f2;color:#090a0c}
+.lockdlg::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
+.lockdlg{max-height:90svh;overflow:visible}
+.lockdlg .dialog-close{position:absolute;right:.6rem;top:.6rem;width:40px;height:40px;display:grid;place-items:center;border:1px solid rgba(0,0,0,.28);background:#f4f4f2;color:#090a0c;font-size:1.1rem;line-height:1;cursor:pointer;z-index:2}
+.lockdlg .dialog-close:hover{background:#090a0c;color:#f4f4f2;border-color:#090a0c}
+.lockdlg__body{padding:3.2rem 1.8rem 1.9rem}
+.lockdlg__body b{display:block;font-size:.68rem;letter-spacing:.18em}
+.lockdlg__body p{margin:.9rem 0 0;font-size:.88rem;line-height:1.9}
+.lockdlg .cta-row{margin-top:1.6rem;gap:.8rem;align-items:flex-start}
+body.ja-on .lockdlg [data-ja]::after{position:static!important;display:inline!important;width:auto!important;max-width:none!important;margin:0 0 0 .4rem!important;padding:0!important;border:0!important;background:none!important;color:inherit!important;opacity:1!important;visibility:visible!important;transform:none!important;font-size:.68rem;letter-spacing:.04em;white-space:normal}
+body:not(.ja-on) .lockdlg [data-ja]:is(:hover,:focus-visible)::after{color:#f4f4f2!important}
+.lockdlg{overflow:hidden}
+.lockdlg .cta-row{flex-wrap:wrap}
+.lockdlg .cta-row>*{align-self:flex-start;max-width:100%}
+.lockdlg .pill{border-color:#090a0c;color:#090a0c}
+.lockdlg .pill:hover{background:#090a0c;color:#f4f4f2}
+/* コメントのいいね */
+button.cmt__like{display:inline-flex;align-items:center;gap:.45rem;min-height:44px;padding:.4rem .95rem;border:1px solid rgba(0,0,0,.2);background:none;color:rgba(0,0,0,.6);font:inherit;font-size:.76rem;cursor:pointer;transition:none}
+button.cmt__like:hover{color:var(--red)}
+button.cmt__like[aria-pressed=true]{border-color:rgba(0,0,0,.2)}
+button.cmt__like i{display:inline-flex;color:rgba(0,0,0,.4);transition:none}
+button.cmt__like:hover i{color:var(--red)}
+button.cmt__like[aria-pressed=true] i{color:var(--red)}
+button.cmt__like[aria-pressed=true] i svg{fill:var(--red)}
+button.cmt__like[aria-pressed=true] i{color:var(--red)}
+button.cmt__like:hover{color:var(--red)}
+button.cmt__like[aria-pressed=true]{color:var(--red)}
+
+/* ja OFF のフローティングヒント: ホバー時も地色に対して読める色に */
+body:not(.ja-on) :is(.pill,.arrow-link,.view-all,.chip,.filters button,.topics__bar a,.topics__bar button,.weekly-mini a,.updates__grid a)[data-ja]:is(:hover,:focus-visible)::after{color:#f4f4f2!important}
+
+/* JP ON のPC表示: ΛLLYメニューを4列2段に */
+@media(min-width:981px){
+  body.ja-on .ally-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));justify-items:start;align-items:start;gap:1.3rem 2rem;overflow:visible}
+  body.ja-on .ally-tabs a{white-space:normal}
+}
+
+button.cmt__like[aria-pressed=true]{border-color:rgba(0,0,0,.2)!important;color:var(--red)!important}
+
+.auth__links{display:flex;flex-wrap:wrap;gap:.4rem;align-items:baseline}
+.auth__links span[role=link]{color:inherit;cursor:default;text-decoration:none;border-bottom:1px solid transparent}
+.auth__links span[role=link]:is(:hover,:focus-visible){border-bottom-color:currentColor;opacity:.75;outline:none}
