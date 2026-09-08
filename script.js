@@ -189,7 +189,7 @@ function applyJa(root){
     write(c); renderCart();
   }
   function paintCount(){
-    const n=(read()||[]).reduce((s,i)=>s+i.qty,0);
+    const n=get().reduce((s,i)=>s+i.qty,0);
     document.querySelectorAll('[data-cart-count]').forEach(el=>{el.textContent=n;});
   }
 

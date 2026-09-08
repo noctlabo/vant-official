@@ -749,3 +749,42 @@ body.ally-page :is(.list,.updates__grid) :is(a,.row):hover{background:rgba(0,0,0
   button.cmt__like:hover{color:var(--red)}
   button.cmt__like:hover i{color:var(--red)}
 }
+
+/* NEXT MOVE: コピーを画像より前面に、暗幕も確実に敷く */
+.next>img{z-index:0}
+.next__shade{z-index:1}
+.next__copy{z-index:2;max-width:min(46rem,calc(100vw - 80px))}
+.next__copy>p:not(.jp-lead){color:rgba(255,255,255,.82)}
+.next__copy .jp-lead{color:#fff}
+
+/* アンカー移動時に見出しが隠れない／行き過ぎない */
+[id]{scroll-margin-top:78px}
+/* 見出しがヘッダー直下に来るよう、セクション自身の上パディングを差し引く */
+section.section[id]{scroll-margin-top:calc(78px - clamp(6rem,10vw,10rem) + 1.5rem)}
+@media(max-width:980px){[id]{scroll-margin-top:66px}section.section[id]{scroll-margin-top:calc(66px - clamp(6rem,10vw,10rem) + 1.5rem)}}
+@media(max-width:600px){section.section[id]{scroll-margin-top:calc(66px - 5.5rem + 1.5rem)}}
+
+@media(max-width:980px){
+  /* スマホ: 日本語ヒントは英語の下に置いて中途半端な折返しを防ぐ */
+  body.ja-on :is(main,.dlg,.footer) :is(a,button,span,b,strong,i,small,em,label,dt,dd)[data-ja]::after{display:block;margin:.28rem 0 0}
+  body.ja-on .hero__statement[data-ja]::after{display:block;margin-top:.5rem}
+  .next__copy{max-width:calc(100vw - 40px)}
+  .next{display:block!important;position:relative;height:auto!important;min-height:0!important;overflow:hidden}
+  .next>img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;min-width:0!important;translate:none!important;object-fit:cover!important;object-position:70% center!important}
+  .next__copy{position:relative!important;left:auto!important;right:auto!important;top:auto!important;transform:none!important;padding:4.5rem 20px 1.3rem;max-width:none}
+}
+
+@media(max-width:980px){
+  /* フィルター類: 日本語は英語の下、ボタンは折り返して画面内に収める */
+  .filters,.chips{display:flex;flex-wrap:wrap;gap:.6rem}
+  .filters button,.chips .chip{max-width:100%}
+  body.ja-on :is(.filters button,.chips .chip,.pill,.arrow-link)[data-ja]::after{display:block!important;margin:.28rem 0 0!important;white-space:normal!important}
+}
+
+@media(max-width:980px){
+  .next__shade{background:linear-gradient(90deg,rgba(2,2,3,.94),rgba(2,2,3,.55) 60%,rgba(2,2,3,.25)),linear-gradient(0deg,rgba(0,0,0,.6),transparent 55%)!important}
+}
+
+@media(max-width:980px){
+  .next>img,.next img{position:absolute!important;left:0!important;top:0!important;right:auto!important;bottom:auto!important;translate:none!important;transform:none!important;width:100%!important;height:100%!important;max-width:none!important;min-width:0!important;object-fit:cover!important;object-position:70% center!important}
+}
