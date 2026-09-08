@@ -696,3 +696,38 @@ button.cmt__like[aria-pressed=true]{border-color:rgba(0,0,0,.2)!important;color:
 .auth__links{display:flex;flex-wrap:wrap;gap:.4rem;align-items:baseline}
 .auth__links span[role=link]{color:inherit;cursor:default;text-decoration:none;border-bottom:1px solid transparent}
 .auth__links span[role=link]:is(:hover,:focus-visible){border-bottom-color:currentColor;opacity:.75;outline:none}
+
+@media(max-width:600px){
+  .next{height:auto!important;min-height:0!important;padding:5rem 0}
+  .next__copy{position:static;top:auto;left:auto;transform:none;padding-inline:20px}
+  .next__copy h2{font-size:3.6rem;margin:.4rem 0 1.8rem}
+  .next__copy>p:not(.jp-lead){margin-top:1.6rem}
+  .next__copy strong{margin-top:1.4rem}
+}
+
+/* NEXT MOVE: 内容に合わせた高さ（COMING SOON. まで表示） */
+.next{height:auto!important;min-height:58svh;padding-block:clamp(4rem,8vh,7rem);display:flex;align-items:center}
+.next__copy{position:static;top:auto;transform:none;padding-inline:max(40px,calc((100vw - 1280px)/2))}
+/* プロフィールダイアログ: 画面内に収めてスクロール */
+dialog{max-height:92svh;overflow:hidden}
+.dialog-grid{max-height:92svh;overflow:auto;overscroll-behavior:contain}
+@media(max-width:600px){
+  .next{padding-block:5rem}
+  .next__copy{padding-inline:20px}
+  dialog{max-height:92svh}
+  .dialog-grid{max-height:92svh;overflow:auto}
+  .dialog-grid>div{padding:2rem 1.3rem 2.6rem}
+}
+
+@media(max-width:600px){
+  .live-hero{aspect-ratio:auto;height:auto}
+  .live-hero img{width:100%!important;height:auto!important;display:block}
+}
+
+@media(max-width:600px){
+  /* 全体が見えるように: 切り抜きをやめて画像本来の比率で表示 */
+  .dialog-gallery>img{aspect-ratio:auto!important;height:auto!important;width:100%;object-fit:contain!important;object-position:center!important;max-height:70svh}
+}
+
+img{-webkit-touch-callout:none;-webkit-user-drag:none;user-select:none}
+@media(max-width:600px){.dialog-gallery>img{cursor:zoom-in}.dialog-gallery{display:grid;place-items:center}}

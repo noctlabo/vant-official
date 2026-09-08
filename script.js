@@ -333,3 +333,34 @@ function applyJa(root){
     num.textContent=on?n-1:n+1;
   });
 })();
+
+/* スマホ: プロフィール大画像はタップで全体表示。長押し保存は抑止 */
+(function(){
+  const mob=()=>matchMedia('(max-width:600px)').matches;
+  let box=document.querySelector('.zoom');
+  const ensure=()=>{
+    if(box) return box;
+    box=document.createElement('div');
+    box.className='zoom';box.setAttribute('aria-hidden','true');
+    box.innerHTML='<button class="zoom__close" aria-label="閉じる">×</button><img alt="">';
+    document.body.appendChild(box);
+    const cl=()=>{box.classList.remove('on');box.setAttribute('aria-hidden','true');document.body.classList.remove('locked');if(box.parentElement!==document.body)document.body.appendChild(box)};
+    box.addEventListener('click',cl);
+    box.querySelector('.zoom__close').addEventListener('click',cl);
+    addEventListener('keydown',e=>{if(e.key==='Escape')cl()},true);
+    return box;
+  };
+  document.addEventListener('click',e=>{
+    const im=e.target.closest('.dialog-gallery>img');
+    if(!im||!mob()) return;
+    const b=ensure(),pic=b.querySelector('img');
+    /* モーダル内の画像はトップレイヤーに重ねる必要があるので dialog 内へ移す */
+    const dlg=im.closest('dialog[open]');
+    (dlg||document.body).appendChild(b);
+    pic.src=im.currentSrc||im.src;pic.alt=im.alt||'';
+    b.classList.add('on');b.setAttribute('aria-hidden','false');
+    if(!dlg)document.body.classList.add('locked');
+  });
+  document.addEventListener('contextmenu',e=>{if(e.target.tagName==='IMG')e.preventDefault();});
+  document.addEventListener('dragstart',e=>{if(e.target.tagName==='IMG')e.preventDefault();});
+})();
