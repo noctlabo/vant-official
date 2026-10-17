@@ -788,3 +788,9 @@ section.section[id]{scroll-margin-top:calc(78px - clamp(6rem,10vw,10rem) + 1.5re
 @media(max-width:980px){
   .next>img,.next img{position:absolute!important;left:0!important;top:0!important;right:auto!important;bottom:auto!important;translate:none!important;transform:none!important;width:100%!important;height:100%!important;max-width:none!important;min-width:0!important;object-fit:cover!important;object-position:50% center!important}
 }
+
+/* NEXT MOVE: 配信リンク */
+.next__copy .next__listen{display:inline-flex;align-items:center;min-height:44px;margin-top:1.4rem;padding:0 1.3rem;border:1px solid rgba(255,255,255,.55);color:#f4f4f2;background:transparent;font-size:.68rem;letter-spacing:.2em;text-decoration:none;cursor:pointer}
+@media(hover:hover){.next__copy .next__listen:hover{background:#f4f4f2;color:#090a0c;border-color:#f4f4f2}}
+.next__copy .next__listen:focus-visible{outline:2px solid #f4f4f2;outline-offset:3px}
+.next__copy strong{display:block}
