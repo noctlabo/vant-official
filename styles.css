@@ -798,7 +798,7 @@ section.section[id]{scroll-margin-top:calc(78px - clamp(6rem,10vw,10rem) + 1.5re
 /* CHANNEL (ダミー動画チャンネル) */
 .ch{display:grid;gap:clamp(2rem,4vw,3.2rem)}
 .ch-banner{margin:0;border:1px solid rgba(255,255,255,.14);overflow:hidden}
-.ch-banner img{display:block;width:100%;height:auto;aspect-ratio:1750/386;object-fit:cover}
+.ch-banner img{display:block;width:100%;height:auto;aspect-ratio:1352/240;object-fit:cover}
 .ch-id{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(1rem,3vw,2rem);align-items:center}
 .ch-id__av{width:clamp(84px,11vw,128px);aspect-ratio:1;border-radius:50%;background:#050505;border:1px solid rgba(255,255,255,.22);display:grid;place-items:center;overflow:hidden}
 .ch-id__av img{width:78%;height:auto}
